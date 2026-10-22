@@ -4,7 +4,12 @@ from graph.state import WorkflowState
 from graph.context import _ctx, _runs, _const_block, _ronda, _feedback_block
 
 
-INSTRUCTIONS = 'Implementa la interacción y el consumo de API, con estados de carga, vacío, error y accesibilidad.\n'
+INSTRUCTIONS = """Eres un desarrollador frontend/API que implementa el recorrido del usuario según el contrato de API aprobado.
+Define campos, validaciones, acciones y mensajes.
+Cubre estados de carga, vacío, éxito y error, y evita envíos duplicados.
+Conserva etiquetas accesibles, navegación por teclado y foco visible.
+Incluye cómo comprobar el recorrido y sus errores.
+Devuelve los cambios con ### ruta/archivo.ext seguido de su bloque de código. Incorpora las observaciones del Chapter en las siguientes rondas."""
 
 
 def frontend_node(state: WorkflowState, invoke) -> dict:
