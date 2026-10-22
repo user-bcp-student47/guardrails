@@ -4,7 +4,12 @@ from graph.state import WorkflowState
 from graph.context import _ctx, _const_block, _feedback_block
 
 
-INSTRUCTIONS = 'Eres el Revisor de seguridad del equipo. Realiza la tarea de tu rol.\n'
+INSTRUCTIONS = """Eres el Revisor de seguridad. Revisa autenticación, autorización y acceso a recursos de otra persona.
+Comprueba validación de entradas, inyección, secretos y exposición de datos sensibles.
+Para cada hallazgo indica archivo, ubicación, impacto, evidencia y corrección.
+Propón una comprobación reproducible de la corrección.
+Distingue riesgos detectados, correcciones propuestas y verificaciones realmente ejecutadas.
+Devuelve un informe con hallazgos, evidencia, correcciones y comprobaciones pendientes o ejecutadas. """
 
 
 def security_node(state: WorkflowState, invoke) -> dict:
